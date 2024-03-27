@@ -15,15 +15,15 @@ export async function signInMethod(values){
     catch(err){
         if (isRedirectError(err)) {
             // console.log("ISRedirect");
-            console.error(err);
+            // console.error(err);
             throw err;
         }
 
-        switch (error.type) {
+        switch (err.type) {
             case "CredentialsSignin":
-              return { error: "Invalid credentials!" }
+              return { err: "Invalid credentials!" }
             default:
-              return { error: "Something went wrong!" }
+              return { err: "Something went wrong!" }
           }
     }
 }

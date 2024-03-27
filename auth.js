@@ -15,7 +15,8 @@ import bcrypt from "bcrypt"
 export const {
   // handler: {GET, POST}, 
   auth, 
-  signIn
+  signIn,
+  signOut
 } = NextAuth({
   adapter: MongoDBAdapter(clientPromise),
   session: { strategy: "jwt" },
@@ -40,7 +41,7 @@ export const {
               // responseDtl.code = 201;
               // responseDtl.data = user
               // return  responseDtl
-              return  true
+              return  user
             }
           }
 
