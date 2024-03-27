@@ -53,10 +53,10 @@ function LoginForm() {
         //     )
         // )
         try{
-            const res =  await signInMethod(values)
+             await signInMethod(values)
         }
         catch(err){
-                console.log("Lgoin Fomr Err");
+                setErrMsg(err.message)
         }
     }
 

@@ -21,9 +21,9 @@ export async function signInMethod(values){
 
         switch (err.type) {
             case "CredentialsSignin":
-              return { err: "Invalid credentials!" }
+                throw "Invalid credentials!"
             default:
-              return { err: "Something went wrong!" }
+                throw "Something went wrong!"
           }
     }
 }
