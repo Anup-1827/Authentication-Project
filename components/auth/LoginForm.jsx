@@ -38,20 +38,6 @@ function LoginForm() {
     })
 
     const onSubmit = async(values)=>{
-        // setErrMsg("")
-        // setSucMsg("")
-        // startTransition(
-        //     ()=>(
-        //     login(values)
-        //     .then(res=>{
-        //         if(res.status === 201 || res.success){
-        //             setSucMsg(res?.message)
-        //         }else{
-        //             setErrMsg(res?.message)
-        //         }
-        //     })
-        //     )
-        // )
         try{
              await signInMethod(values)
         }
