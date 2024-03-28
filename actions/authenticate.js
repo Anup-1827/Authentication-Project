@@ -21,7 +21,9 @@ export async function signInMethod(values){
 
         switch (err.type) {
             case "CredentialsSignin":
-                throw "Invalid credentials!"
+                throw "Invalid credentials!!!"
+            case "CallbackRouteError":
+                throw "User does not exist!!!"
             default:
                 throw "Something went wrong!"
           }

@@ -24,7 +24,7 @@ async function register(values) {
         const isConnectedToDB = await dbConnect();
         // console.log(isConnectedToDB);
 
-        if(isConnectedToDB?.success){
+        // if(isConnectedToDB?.success){
             const findUniqueUser = await User.find({"email" : validateRes?.data?.email})
 
             if(findUniqueUser.length >0){
@@ -46,7 +46,7 @@ async function register(values) {
             responseDtl.message = "Registered Successfully!!!";
             
             return responseDtl;
-        }
+        // }
     }
     
     responseDtl.success = false;
