@@ -4,7 +4,7 @@ import GitHub from "next-auth/providers/github"
 import NextAuth from "next-auth";
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
 // import authConfig from "./auth.config.js";
-import {clientPromise} from "./lib/db"
+import dbConnect from "./lib/db"
 
 import Credentials from "next-auth/providers/credentials";
 import { LoginSchema } from "./schema";
@@ -18,7 +18,7 @@ export const {
   signIn,
   signOut
 } = NextAuth({
-  adapter: MongoDBAdapter(clientPromise),
+  adapter: MongoDBAdapter(dbConnect()),
   session: { strategy: "jwt" },
   callbacks:{
     async jwt({token}){

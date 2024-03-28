@@ -1,6 +1,6 @@
 "use server"
 
-import { connectToDB } from "@/lib/db";
+import dbConnect from "@/lib/db";
 import  User  from "@/model/User";
 import { RegisterSchema } from "@/schema"
 import { data } from "autoprefixer";
@@ -21,7 +21,7 @@ async function register(values) {
         const genSalt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(validateRes.data.password, genSalt)
         
-        const isConnectedToDB = await connectToDB();
+        const isConnectedToDB = await dbConnect();
         // console.log(isConnectedToDB);
 
         if(isConnectedToDB?.success){
