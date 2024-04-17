@@ -1,6 +1,6 @@
 "use server"
 
-import { signIn } from "@/auth"
+// import { signIn } from "@/auth"
 import { Response_BP } from "@/lib/config";
 import { DEFAULT_Login_Redirect } from "@/routes";
 import { isRedirectError } from "next/dist/client/components/redirect";
@@ -8,7 +8,7 @@ import { isRedirectError } from "next/dist/client/components/redirect";
 export async function signInMethod(values){
     try{
         // console.log("Sign In Is Called");
-        await signIn("credentials", {...values, redirectTo: DEFAULT_Login_Redirect});
+        // await signIn("credentials", {...values, redirectTo: DEFAULT_Login_Redirect});
         // console.log("LoggedIn");
         // console.log(res_signIn);
     }
