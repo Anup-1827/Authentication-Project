@@ -14,3 +14,17 @@ export async function getUserByEmail(email){
         return null;
     }
 }
+
+export async function getUserById(id){
+    try{
+
+        await dbConnect();
+
+        const user = await User.findById(id)
+
+        return user;
+    }
+    catch(err){
+
+    }
+}
